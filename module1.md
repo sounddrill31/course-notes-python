@@ -1,3 +1,7 @@
+# Table of Contents
+<!-- START doctoc -->
+<!-- END doctoc -->
+
 <!-- TODO: Preview existing -->
 Python is a case-sensitive programming language
 

@@ -3,18 +3,20 @@
   - Implementing critical business requirements through less lines of code
 - Initially implemented by Guido Van Rossum in 1989, released in 1991 using Assembly
   - Formed into Python Software Foundation, reimplented in C (CPython)
-- OSS, ***Python Software Foundation License Version 2***
+- [OSS, ***Python Software Foundation License Version 2***](https://docs.python.org/3/license.html)
+  - > Python software and documentation are licensed under the Python Software Foundation License Version 2.
+    > Starting with Python 3.8.6, examples, recipes, and other code in the documentation are dual licensed under the PSF License Version 2 and the Zero-Clause BSD license.
 - Python is a case-sensitive programming language
-- Dynamically typed, will be explored in [Datatypes section](#data-types) section
+- Dynamically typed, will be explored in [Datatypes](#data-types) section
 
 ## PEP8 Validation
 Using `pylint`, we can easily validate our code and find errors in it. It is a tool that checks our code for errors and provides suggestions for improvements based on PEP8 standards and more, mainly rating conformity
-- PEP8: Python Enhancement Proposal 8
+- [PEP8: Python Enhancement Proposal 8](https://peps.python.org/pep-0008/)
   - Document/Manual that contains suggestions for coding standards and best practices
 
 
 ### Install PyLint
-0. Make a Virtual Environment, to comply with PEP 668 and not mess up our system python packages. Remember to enter it afterwards before performing any operations. (Not required on windows, but greatly recommended)
+0. Make a Virtual Environment, to comply with [PEP 668](https://peps.python.org/pep-0668/) and not mess up our system python packages. Remember to enter it afterwards before performing any operations. (Not required on windows, but greatly recommended)
 ```bash
 python3 -m venv myenv # optional, makes a virtual environment in myenv directory
 ```

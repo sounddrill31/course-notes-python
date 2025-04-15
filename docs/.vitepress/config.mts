@@ -8,21 +8,30 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
-    ],
-
-    sidebar: [
-      {
-        text: 'Examples',
+      { text: 'Modules',
         items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
+        { text: 'Module 1', link: '/contents/module1' },
+        { text: 'Module 2', link: '/contents/module2' },
+        { text: 'Module 3', link: '/contents/module3' },
+        { text: 'Module 4', link: '/contents/module4' }
         ]
       }
     ],
 
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
-    ]
+    sidebar: [
+      {
+        text: 'Modules',
+        items: [
+          { text: 'Module 1', link: '/contents/module1' },
+          { text: 'Module 2', link: '/contents/module2' },
+          { text: 'Module 3', link: '/contents/module3' },
+          { text: 'Module 4', link: '/contents/module4' }
+        ]
+      }
+    ],
+
+    //socialLinks: [
+    //  { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+    //]
   }
 })

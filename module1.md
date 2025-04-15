@@ -18,7 +18,7 @@ Types of Languages using Datatypes:
   - The Datatypes of the variables are declared internally based on given data
   - If new variable doesn't match the old datatype, it is redeclared so it will not cause errors
   - In python, we mustn't declare the datatype explicitly
-  - ```python
+    ```python
     abc = 1000
     print(f"{abc} and type is {type(abc)}")
     abc = "souhrud"
@@ -55,6 +55,7 @@ In python, datatypes of variables are declared internally at the time of executi
   print(i)
   print(type(i))
   j = 123.123
+  print(J)
   print(type(j))
   k=True
   print(k)
@@ -67,6 +68,7 @@ In python, datatypes of variables are declared internally at the time of executi
   ```
   1000
   <class 'int'>
+  123.123
   <class 'float'>
   True
   <class 'bool'>

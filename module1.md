@@ -1,8 +1,4 @@
-# Table of Contents
-<!-- START doctoc -->
-<!-- END doctoc -->
-
-<!-- TODO: Preview existing -->
+<!-- TODO: Upload existing -->
 Python is a case-sensitive programming language
 
 ## Data Types

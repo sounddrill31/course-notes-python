@@ -4,6 +4,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "Python Notes",
   description: "Compilation of Python Notes from Course",
+  base: '/course-notes-python/',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [

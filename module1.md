@@ -1,4 +1,3 @@
-<!-- TODO: Upload existing -->
 ## Features of Python and Info
 - Simple, Easy to Learn
   - Implementing critical business requirements through less lines of code
@@ -6,7 +5,7 @@
   - Formed into Python Software Foundation, reimplented in C (CPython)
 - OSS, ***Python Software Foundation License Version 2***
 - Python is a case-sensitive programming language
-- Dynamically typed, will be explored in [Datatypes section](#data_types) section
+- Dynamically typed, will be explored in [Datatypes section](#data-types) section
 
 ## PEP8 Validation
 Using `pylint`, we can easily validate our code and find errors in it. It is a tool that checks our code for errors and provides suggestions for improvements based on PEP8 standards and more, mainly rating conformity
@@ -77,30 +76,33 @@ Your code has been rated at 6.25/10 (previous run: 8.18/10, -1.93)
 
 Fixed Code:
 ```python
-"""Simple Program to demonstrate Arithmetic Operations""" // [!code ++]
+"""Simple Program to demonstrate Arithmetic Operations""" # [!code ++]
 
-x = 100 // [!code --]
-X = 10 // [!code ++]
-y = 20 // [!code --]
-Y = 20 // [!code ++]
-print(x) // [!code --]
-print(X) // [!code ++]
-print(y) // [!code --]
-print(Y) // [!code ++]
-print(x + y) // [!code --]
-print(X + Y) // [!code ++]
-print(x - y) // [!code --]
-print(X - Y) // [!code ++]
-print(x * y) // [!code --]
-print(X * Y) // [!code ++]
-print(x / y) // [!code --]
-print(X / Y) // [!code ++]
+x = 100 # [!code --]
+X = 10 # [!code ++]
+y = 20 # [!code --]
+Y = 20 # [!code ++]
+print(x) # [!code --]
+print(X) # [!code ++]
+print(y) # [!code --]
+print(Y) # [!code ++]
+print(x + y) # [!code --]
+print(X + Y) # [!code ++]
+print(x - y) # [!code --]
+print(X - Y) # [!code ++]
+print(x * y) # [!code --]
+print(X * Y) # [!code ++]
+print(x / y) # [!code --]
+print(X / Y) # [!code ++]
 ```
 
 ```
 -------------------------------------------------------------------
 Your code has been rated at 10.00/10 (previous run: 6.25/10, +3.75)
 ```
+
+> [!TIP]
+> in Diff View, Red Indicates that the code was removed and Green indicates that the code was added.
 
 ## Data Representation
 

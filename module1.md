@@ -79,7 +79,7 @@ Fixed Code:
 """Simple Program to demonstrate Arithmetic Operations""" # [!code ++]
 
 x = 100 # [!code --]
-X = 10 # [!code ++]
+X = 100 # [!code ++]
 y = 20 # [!code --]
 Y = 20 # [!code ++]
 print(x) # [!code --]

@@ -5,7 +5,6 @@ layout: home
 hero:
   name: "Python Notes"
   text: "Compilation of Python Notes from Course"
-  tagline: My great project tagline
 #  actions:
 #    - theme: brand
 #      text: Markdown Examples

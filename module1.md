@@ -206,3 +206,155 @@ In python, datatypes of variables are declared internally at the time of executi
   souhrud
   <class 'str'>
   ```
+
+### Types of Datatypes
+Programming languages support 2 types of datatypes:
+1. Primitive types
+2. Reference types
+
+- Primitive Datatypes
+  - contains fixed size
+  - Languages that support these are not regarded as complete object-oriented-programming languages, like Java and dotnet.
+- Reference Datatypes
+  - doesn't contain fixed size
+  - Python is a programming language that only supports reference type datatypes.
+    - Every datatype is implemented through `class` syntax in Python
+    - `class` syntax follows dynamic memory allocation so that there is no fixed size for datatypes in Python
+    - Memory space allocated for `class` syntax is technically known as an object
+      - Memory allocation for class is called object creation.
+      - Memory deallocation is called object deletion.
+      - Any number of objects can be created for a class
+
+      <!-- Diagram with a box `class int:` and x=1000 where is a circle with 1000 inside and pointing to the x=1000 using a line TODO: Write in mermaid -->
+
+### Boxing and Unboxing
+Java and dotnet allows you to convert every Primitive to Reference Datatypes(called boxing, using wrapper classes). The process of converting Reference Datatypes to Primitive type is called unboxing.
+
+  <!--id  function to know address and getsizeof thru sys -->
+
+<!-- Builtin functions: Link official docs-->
+### Example
+```python
+import sys
+x=1000
+print(x)
+print(type(x))
+print(sys.getsizeof(x))
+y=12345678901234567890
+print(y)
+print(type(y))
+print(id(y))
+print(sys.getsizeof(y))
+```
+Output:
+```
+1000
+<class 'int'>
+28
+12345678901234567890
+<class 'int'>
+140442143993136
+36
+```
+
+>[!TIP]
+>The IDs change every time you run it since they are the memory addresses holding the value of x and y
+
+Overwriting a variable automatically dereferences old objects, and the garbage collector drops it when reference count becomes 0
+<!-- x=1000 # now unused, will be dereferenced and dropped by garbage collector when  Reference count becomes 0
+x=2000-->
+example:
+```python
+import sys
+x=1000
+print(x)
+print(type(x))
+print(id(x))
+print(sys.getsizeof(x))
+x=12345678901234567890
+print(x)
+print(type(x))
+print(id(x))
+print(sys.getsizeof(x))
+x=123.456
+print(x)
+print(type(x))
+print(id(x))
+print(sys.getsizeof(x))
+```
+Output:
+```
+1000
+<class 'int'>
+140442144833040
+28
+12345678901234567890
+<class 'int'>
+140442143994720
+36
+123.456
+<class 'float'>
+140442144832880
+24
+```
+
+Python Datatypes are categorized into different categories.
+1. Numerical Types
+  - Used to represent the non-decimal point numerical values, decimal point numerical values and complex values
+  - Python supports 3 Numerical Types:
+    1. `int`
+    2. `float`
+    3. `complex`
+  - Example:
+    ```python
+    import sys
+    x=1000
+    print(x)
+    print(type(x))
+    print(id(x))
+    print(sys.getsizeof(x))
+    y=123.456
+    print(y)
+    print(type(y))
+    print(id(y))
+    print(sys.getsizeof(y))
+    z=3+4j
+    print(z)
+    print(type(z))
+    print(id(z))
+    print(sys.getsizeof(z))
+    ```
+  - Output:
+    ```
+    1000
+    <class 'int'>
+    140442144832816
+    28
+    123.456
+    <class 'float'>
+    140442201642096
+    24
+    (3+4j)
+    <class 'complex'>
+    140442144832752
+    32
+    ```
+2. Boolean types
+  - Boolean category Datatypes represent a Boolean value, `True` or `False`
+  - Python supports only one Boolean category datatype, `bool`
+  - Example:
+    ```python
+    import sys
+    x=True
+    print(x)
+    print(type(x))
+    print(id(x))
+    print(sys.getsizeof(x))
+    ```
+  - Output
+    ```
+    True
+    <class 'bool'>
+    140442258316512
+    28
+    ```

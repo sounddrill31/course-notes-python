@@ -11,7 +11,7 @@ if [[ "$1" == "cf" ]]; then
     sed -i 's/base.*,//g' .vitepress/config.mts
 fi
 npm install
-npx vitepress build 
+npm run docs:build 
 cd ..
 
 echo "Built from $START_DIR"

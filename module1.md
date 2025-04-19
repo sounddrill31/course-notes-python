@@ -1,6 +1,6 @@
 
 > [!TIP]
-> This Page supports running Python directly from your browser!
+> This Page supports running Python directly from your browser! If the Run Button doesn't show the run or loading button, try reloading your browser.
 
 ::: details  Click for more details. If this feature is not working as expected, [please report it to us on Github!](https://github.com/sounddrill31/course-notes-python/issues/new)
 

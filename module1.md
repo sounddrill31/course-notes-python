@@ -1,3 +1,13 @@
+
+> [!TIP]
+> This Page supports running Python directly from your browser!
+
+::: details  Click for more details. If this feature is not working as expected, [please report it to us on Github!](https://github.com/examdawn/NEP2020_2023_BCA/issues/new)
+
+> [!WARNING]
+> This will not work if your browser is too old or does not support Web Assembly/Web Workers. If you're using a privacy focused browser like cromite, please enable JavaScript JIT and WebAssembly from the permissions menu.
+
+
 ## Features of Python and Info
 - Simple, Easy to Learn
   - Implementing critical business requirements through less lines of code
@@ -49,6 +59,20 @@ print(x-y)
 print(x*y)
 print(x/y)
 ```
+::: details Try it out
+```python:line-numbers
+x=100
+y=20
+print(x)
+print(y)
+print(x+y)
+print(x-y)
+print(x*y)
+print(x/y)
+```
+<Editor id="head-example-prg1-addsub" />
+:::
+
 
 Output:
 ```
@@ -61,7 +85,7 @@ Output:
 ```
 
 ### Verify through PyLint
-```
+```bash
 pylint main.py
 ```
 
@@ -160,7 +184,17 @@ Types of Languages using Datatypes:
       1000 and type is <class 'int'>
       souhrud and type is <class 'str'>
       ```
-
+::: details Try it out
+```python:line-numbers
+abc = 1000
+print(abc)
+print(type(abc))
+abc = "souhrud"
+print(abc)
+print(type(abc))
+```
+<Editor id="Types-eg1-string-int-diff" />
+:::
 ### Standard Library Datatypes
 Python internally uses the following Standard Datatypes
 - int
@@ -207,6 +241,24 @@ In python, datatypes of variables are declared internally at the time of executi
   <class 'str'>
   ```
 
+::: details Try it out
+```python:line-numbers
+i = 1000
+print(i)
+print(type(i))
+j = 123.123
+print(J)
+print(type(j))
+k=True
+print(k)
+print(type(k))
+p="souhrud"
+print(p)
+print(type(p))
+```
+<Editor id="type-example2-moretypes" />
+:::
+
 ### Types of Datatypes
 Programming languages support 2 types of datatypes:
 1. Primitive types
@@ -231,6 +283,8 @@ Programming languages support 2 types of datatypes:
 Java and dotnet allows you to convert every Primitive to Reference Datatypes(called boxing, using wrapper classes). The process of converting Reference Datatypes to Primitive type is called unboxing.
 
   <!--id  function to know address and getsizeof thru sys -->
+We use the `id()` function to know the address of an object and `getsizeof()`(from the `sys` module) to know the size of an object.
+- Because we're using `sys` module,we have to import it before we use it. Syntax: `import sys`
 
 <!-- Builtin functions: Link official docs-->
 ### Example
@@ -246,6 +300,8 @@ print(type(y))
 print(id(y))
 print(sys.getsizeof(y))
 ```
+
+
 Output:
 ```
 1000
@@ -256,6 +312,21 @@ Output:
 140442143993136
 36
 ```
+::: details Try it out
+```python:line-numbers
+import sys
+x=1000
+print(x)
+print(type(x))
+print(sys.getsizeof(x))
+y=12345678901234567890
+print(y)
+print(type(y))
+print(id(y))
+print(sys.getsizeof(y))
+```
+<Editor id="example-id-typeof-eg3" />
+:::
 
 >[!TIP]
 >The IDs change every time you run it since they are the memory addresses holding the value of x and y
@@ -298,6 +369,28 @@ Output:
 24
 ```
 
+::: details Try it out
+```python:line-numbers
+import sys
+x=1000
+print(x)
+print(type(x))
+print(id(x))
+print(sys.getsizeof(x))
+x=12345678901234567890
+print(x)
+print(type(x))
+print(id(x))
+print(sys.getsizeof(x))
+x=123.456
+print(x)
+print(type(x))
+print(id(x))
+print(sys.getsizeof(x))
+```
+<Editor id="examle-prg4-getsizeof" />
+:::
+
 Python Datatypes are categorized into different categories.
 1. Numerical Types
   - Used to represent the non-decimal point numerical values, decimal point numerical values and complex values
@@ -339,6 +432,27 @@ Python Datatypes are categorized into different categories.
     140442144832752
     32
     ```
+    ::: details Try it out
+    ```python:line-numbers
+    import sys
+    x=1000
+    print(x)
+    print(type(x))
+    print(id(x))
+    print(sys.getsizeof(x))
+    y=123.456
+    print(y)
+    print(type(y))
+    print(id(y))
+    print(sys.getsizeof(y))
+    z=3+4j
+    print(z)
+    print(type(z))
+    print(id(z))
+    print(sys.getsizeof(z))
+    ```
+    <Editor id="example-prg5-numeric-demos" />
+    ::: TODO
 2. Boolean types
   - Boolean category Datatypes represent a Boolean value, `True` or `False`
   - Python supports only one Boolean category datatype, `bool`
@@ -358,3 +472,16 @@ Python Datatypes are categorized into different categories.
     140442258316512
     28
     ```
+    ::: details Try it out
+    ```python:line-numbers
+    import sys
+    x=True
+    print(x)
+    print(type(x))
+    print(id(x))
+    print(sys.getsizeof(x))
+    ```
+    <Editor id="example-prg6-booleandemos" />
+    ::: TODO
+2. NoneType
+<!-- TODO: Add Class 8 contents -->

@@ -2,11 +2,11 @@
 > [!TIP]
 > This Page supports running Python directly from your browser!
 
-::: details  Click for more details. If this feature is not working as expected, [please report it to us on Github!](https://github.com/examdawn/NEP2020_2023_BCA/issues/new)
+::: details  Click for more details. If this feature is not working as expected, [please report it to us on Github!](https://github.com/sounddrill31/course-notes-python/issues/new)
 
 > [!WARNING]
 > This will not work if your browser is too old or does not support Web Assembly/Web Workers. If you're using a privacy focused browser like cromite, please enable JavaScript JIT and WebAssembly from the permissions menu.
-
+:::
 
 ## Features of Python and Info
 - Simple, Easy to Learn

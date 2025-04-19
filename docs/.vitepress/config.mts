@@ -1,11 +1,19 @@
 import { defineConfig } from 'vitepress'
 import { vitepressPythonEditor } from 'vitepress-python-editor/vite-plugin'
+import { withMermaid } from "vitepress-plugin-mermaid"
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: "Python Notes",
   description: "Compilation of Python Notes from Course",
   base: '/course-notes-python/',
+  mermaid: {
+      // refer https://mermaid.js.org/config/setup/modules/mermaidAPI.html#mermaidapi-configuration-defaults for options
+    },
+ // optionally set additional config for plugin itself with MermaidPluginConfig
+    mermaidPlugin: {
+      class: "mermaid my-class", // set additional css classes for parent container 
+    },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [

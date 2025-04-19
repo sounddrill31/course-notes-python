@@ -10,6 +10,7 @@ cd docs
 if [[ "$1" == "cf" ]]; then
     sed -i 's/base.*,//g' .vitepress/config.mts
 fi
+npm install
 npx vitepress build 
 cd ..
 

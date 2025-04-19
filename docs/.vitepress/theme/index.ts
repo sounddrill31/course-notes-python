@@ -1,6 +1,7 @@
 // https://vitepress.dev/guide/custom-theme
 import { h } from 'vue'
 import type { Theme } from 'vitepress'
+import Editor from 'vitepress-python-editor'
 import DefaultTheme from 'vitepress/theme'
 import './style.css'
 
@@ -12,6 +13,7 @@ export default {
     })
   },
   enhanceApp({ app, router, siteData }) {
+    app.component('Editor', Editor)
     // ...
   }
 } satisfies Theme

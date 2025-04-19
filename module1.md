@@ -247,7 +247,7 @@ i = 1000
 print(i)
 print(type(i))
 j = 123.123
-print(J)
+print(j)
 print(type(j))
 k=True
 print(k)
@@ -326,6 +326,8 @@ print(id(y))
 print(sys.getsizeof(y))
 ```
 <Editor id="example-id-typeof-eg3" />
+
+The object size here might be smaller than the previous output thanks to Pyodide optimizations
 :::
 
 >[!TIP]
@@ -389,6 +391,7 @@ print(id(x))
 print(sys.getsizeof(x))
 ```
 <Editor id="examle-prg4-getsizeof" />
+The object size here might be smaller than the previous output thanks to Pyodide optimizations
 :::
 
 Python Datatypes are categorized into different categories.
@@ -452,7 +455,8 @@ Python Datatypes are categorized into different categories.
     print(sys.getsizeof(z))
     ```
     <Editor id="example-prg5-numeric-demos" />
-    ::: TODO
+    The object size here might be smaller than the previous output thanks to Pyodide optimizations
+    :::
 2. Boolean types
   - Boolean category Datatypes represent a Boolean value, `True` or `False`
   - Python supports only one Boolean category datatype, `bool`
@@ -482,6 +486,7 @@ Python Datatypes are categorized into different categories.
     print(sys.getsizeof(x))
     ```
     <Editor id="example-prg6-booleandemos" />
-    ::: TODO
+    The object size here might be smaller than the previous output thanks to Pyodide optimizations
+    :::
 2. NoneType
 <!-- TODO: Add Class 8 contents -->

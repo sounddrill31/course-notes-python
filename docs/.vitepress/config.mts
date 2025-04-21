@@ -1,9 +1,8 @@
-import { defineConfig } from 'vitepress'
 import { vitepressPythonEditor } from 'vitepress-python-editor/vite-plugin'
 import { withMermaid } from "vitepress-plugin-mermaid"
 
 // https://vitepress.dev/reference/site-config
-export default defineConfig({
+export default withMermaid({
   title: "Python Notes",
   description: "Compilation of Python Notes from Course",
   base: '/course-notes-python/',

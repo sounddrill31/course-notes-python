@@ -490,3 +490,238 @@ Python Datatypes are categorized into different categories.
     :::
 2. NoneType
 <!-- TODO: Add Class 8 contents -->
+3. str
+
+<!-- Operators and magic methods -->
+<!-- TODO: Add contents upto Class 10-->
+## Operators
+Python Operators are categorized into different categories:
+### Arithmetic Operators
+- Used to perform mathematical arithmetic operations like Addition, Subtraction, Multiplication,Division, Modulus, Floor Division and Exponentiation Operations
+```python
+  x=14
+  y=3
+  print(x+y) # Addition
+  print(x-y) # Subtraction
+  print(x*y) # Multiplication
+  print(x/y) # Division
+  print(x%y) # Modulus
+  print(x//y) # Floor Division
+  print(x**y) # Exponent/Power (x^y)
+  ```
+  - Output:
+  ```
+  17
+  11
+  42
+  4.666666666666667
+  2
+  4
+  2744
+  ```
+
+::: details String Multiplication
+```python
+x="souhrud"
+y=3
+print(x*y) # int * string is supported
+```
+
+Output:
+```
+souhrudsouhrudsouhrud
+```
+:::
+### Comparison Operators
+- Data Comparison
+  - Comparison Operators are used to compare the data of the objects, pointed by the operands
+  ```python
+  x="100"
+  y="20"
+  print(x>y)
+  print(x>=y)
+  print(x<y)
+  print(x<=y)
+  print(x==y) # = is for assignment, == is for comparison
+  print(x!=y)
+  ```
+  - Output:
+  ```
+  False
+  False
+  True
+  True
+  False
+  True
+  ```
+<!-- mermaid diagram april 21 8:05, a=1000 object, b=2000  -->
+
+### Identity Operators
+- Address Comparison
+  - Identity Operators are used to compare the id of the objects, pointed by the operands
+  - We cannot rely on it to behave like Comparison Operators
+  - Python supports two Identity Operators:
+    - `is`
+    - `is not`
+
+#### Eg 1: In this context, it behaves the same as comparison operations
+```python
+x=1000
+print(x)
+print(id(x))
+y=2000
+print(y)
+print(id(y))
+print(x is y)
+print(x is not y)
+```
+
+Output:
+```
+1000
+140611664345872
+2000
+140611664346544
+False
+True
+```
+
+#### Eg 2: When values are the same and the id is the same, it is `True`
+```python
+x=2000
+print(x)
+print(id(x))
+y=x
+print(y)
+print(id(y))
+print(x is y)
+print(x is not y)
+```
+Output:
+```
+3000
+140611664346800
+3000
+140611664346800
+True
+False
+```
+
+#### Eg 3. With lists
+```python
+x=[10,20,30]
+print(x)
+print(id(x))
+y=[40,50,60]
+print(y)
+print(id(y))
+print(x==y)
+print(x!=y)
+print(x is y)
+print(x is not y)
+```
+Output:
+```
+[10, 20, 30]
+140611663549632
+[40, 50, 60]
+140611663544960
+False
+True
+False
+True
+```
+
+#### Eg4. List with same values
+```python
+x=[70,80,90]
+print(x)
+print(id(x))
+y=[70,80,90]
+print(y)
+print(id(y))
+print(x==y)
+print(x!=y)
+print(x is y)
+print(x is not y)
+```
+
+Output:
+```
+[70, 80, 90]
+140611663527104
+[70, 80, 90]
+140611745457536
+True
+False
+False
+True
+```
+
+List is immutable, duplicate objects are created
+
+### Membership Operators
+Membership Operators are used to search whether a particular element is available or not in a given Iterable type Objects
+
+
+- Non-Iterable Objects
+  - Any object that can only store one value is called a Non-Iterable Object
+  - int, float, bool, NoneType, etc
+- Iterable Objects
+  - Any object that can store 0 or more values is called an Iterable Object
+  - str, list, tuple, etc
+
+> [!TIP]
+> Membership operators only work on Iterable Objects
+
+Python supports 2 Membership Operators:
+- `in`
+- `not in`
+
+Eg.
+```python
+x = [70, 80, 90]
+print(60 in x)
+print(60 not in x)
+print(80 in x)
+print(80 not in x)
+```
+
+Output:
+```
+False
+True
+True
+False
+```
+
+Eg2.
+```python
+x=789
+print(x)
+print(8 in x)
+print(8 not in x)
+print(6 in x)
+print(6 not in x)
+```
+
+> [!ERROR]
+> TypeError: argument of type 'int' is not iterable
+
+Eg3.
+```python
+x="789"
+print(x)
+print('8' in x)
+print('8' not in x)
+print('6' in x)
+print('6' not in x)
+```
+Output:
+```
+789
+True
+False
+False
+True
+```

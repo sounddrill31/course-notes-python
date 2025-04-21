@@ -279,6 +279,12 @@ Programming languages support 2 types of datatypes:
 
       <!-- Diagram with a box `class int:` and x=1000 where is a circle with 1000 inside and pointing to the x=1000 using a line TODO: Write in mermaid -->
 
+      ```mermaid
+      graph LR
+        class int --> x=1000
+        x=1000 --> 1000
+      ```
+
 ### Boxing and Unboxing
 Java and dotnet allows you to convert every Primitive to Reference Datatypes(called boxing, using wrapper classes). The process of converting Reference Datatypes to Primitive type is called unboxing.
 
@@ -336,6 +342,13 @@ The object size here might be smaller than the previous output thanks to Pyodide
 Overwriting a variable automatically dereferences old objects, and the garbage collector drops it when reference count becomes 0
 <!-- x=1000 # now unused, will be dereferenced and dropped by garbage collector when  Reference count becomes 0
 x=2000-->
+```mermaid
+graph LR
+  class int --> x=1000
+  class int --> x=2000
+  x=1000 -!-> 1000
+  x=2000 --> 2000
+```
 example:
 ```python
 import sys

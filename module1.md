@@ -407,8 +407,9 @@ print(sys.getsizeof(x))
 The object size here might be smaller than the previous output thanks to Pyodide optimizations
 :::
 
+## Data Types
 Python Datatypes are categorized into different categories.
-1. Numerical Types
+### 1. Numerical Types
   - Used to represent the non-decimal point numerical values, decimal point numerical values and complex values
   - Python supports 3 Numerical Types:
     1. `int`
@@ -470,7 +471,7 @@ Python Datatypes are categorized into different categories.
     <Editor id="example-prg5-numeric-demos" />
     The object size here might be smaller than the previous output thanks to Pyodide optimizations
     :::
-2. Boolean types
+### 2. Boolean types
   - Boolean category Datatypes represent a Boolean value, `True` or `False`
   - Python supports only one Boolean category datatype, `bool`
   - Example:
@@ -501,10 +502,63 @@ Python Datatypes are categorized into different categories.
     <Editor id="example-prg6-booleandemos" />
     The object size here might be smaller than the previous output thanks to Pyodide optimizations
     :::
-2. NoneType
-<!-- TODO: Add Class 8 contents -->
-3. str
+### 3. NoneType
+<!-- TODO: Add Class 8 contents
+`NoneType` is used to represent a `None` value
+- Python supports only one `NoneType` datatype, `NoneType` (class)
 
+```mermaid
+graph LR
+    A[C Language] --> B1[x declared] --No Value Given--> C1[Garbage Value stored]
+    A[Java Language(s)] --> B2[x declared] --No Value Given--> C2[Value stored but we can predict it]
+    A[Dotnet Languages] --> B3[x declared] --No Value Given--> C3[Value stored but we can predict it]
+    A[Python Language] --> B4[x declared] --No Value Given--> C4[Throws Error `NameError`]
+    ```
+
+
+Here, we want to use `x` but we don't need it yet/don't have clarity on what to do with it
+
+```python
+x
+print(x)
+```
+
+> [!ERROR]
+> NameError: name 'x' is not defined
+
+So we assign a `NoneType` class value `None` to object `x`
+```python
+x=None
+print(x)
+print(type(x))
+```
+Output:
+```
+None
+<class 'NoneType'>
+```
+### 4. str
+
+
+
+### Mutable Objects vs Immutable Objects
+Mutable Objects are those objects whose value can be changed after creation.
+Mutable Objects are:
+- `List`
+- `Dictionary`
+- `Set`
+- User Defined Classes
+
+Immutable Objects are those objects whose value cannot be changed after creation. If they are changed, they are redeclared and recreated.
+Immutable Objects are:
+- `int`
+- `float`
+- `bool`
+- `str`
+- `tuple`
+- `frozenset`
+
+<!-- Mutable Vs Immutable Objects -->
 <!-- Operators and magic methods -->
 <!-- TODO: Add contents upto Class 10-->
 ## Operators
@@ -737,4 +791,135 @@ True
 False
 False
 True
+```
+
+### Bitwise Operators
+Bitwise Operators are used to perform bitwise operations on integers.
+
+Python supports 6 Bitwise Operators:
+- `&` (Bitwise AND)
+- `|` (Bitwise OR)
+- `^` (Bitwise XOR)
+- `~` (Bitwise NOT) <!-- Get this cleared -->
+- `<<` (Bitwise Left Shift)
+- `>>` (Bitwise Right Shift)
+
+Eg. <!-- 128 64 32 16 8 4 2 1 -->
+```python
+x = 10 # 0 0 0 0 1 0 1 0
+y = 6  # 0 0 0 0 0 1 1 0
+print(x & y) # Boolean AND, 0 0 0 0 0 0 1 0 = 2
+print(x | y) # Boolean OR,  0 0 0 0 1 1 1 0 = 14
+print(x ^ y) # Boolean XOR, 0 0 0 0 1 1 0 0 = 12
+print(~x) # Boolean NOT, 1 1 1 1 0 1 0 1 = Negative 11
+print(x << 2) # Boolean Left Shift by 2 Positions, 0 0 1 0 1 0 0 0 = 32 + 8 = 40
+print(x >> 2) # Boolean Right Shift by 2 Positions,0 0 0 0 0 0 1 0 = 2
+```
+
+Output:
+```
+2
+14
+12
+-11
+40
+2
+```
+
+### Unary Operators
+The Operators which we can apply on only one operand are called Unary Operators
+
+- `+` (Unary Plus)
+- `-` (Unary Minus)
+- `~` (Unary NOT), already covered under Unary Operators
+
+Eg.
+
+```python
+x=10
+print(+x)
+print(-x)
+```
+
+Output:
+```
+10
+-10
+```
+
+### Logical Operators
+Logical Operators are used to perform mathematical logical operations on Boolean values.
+
+Python supports 3 Logical Operators:
+- `and` (Logical AND)
+- `or` (Logical OR)
+- `not` (Logical NOT)
+
+Eg.
+
+```python
+x = True
+y = False
+print(x)
+print(y)
+print(x and y) # Logical AND
+print(x or y) # Logical OR
+print(not x) # Logical NOT
+```
+
+Output:
+```
+True
+False
+False
+True
+False
+```
+
+## Operator Precedence
+Expressions are evaluated from Highest to Lowest Precedence, and in the given directionif they have the same Precedence.
+| Operator                         | Direction     | Precedence  | Meaning                                 |
+|----------------------------------|---------------|-------------|-----------------------------------------|
+| `(`, `)`                         | Left to Right | Highest     | Brackets                                |
+| `**`                             | Right to Left | High        | Exponent                                |
+| `+x`, `-x`, `~`                  | Right to Left | High        | Unary Plus, Minus, Bitwise NOT          |
+| `*`,`/`,`//`,`%`                 | Left to Right | Medium-high | Multiplication, Division, Floor Division, Modulus |
+| `+`, `-`                         | Left to Right | Medium      | Addition, Subtraction                   |
+| `<<`, `>>`                       | Left to Right | Medium      | Bitwise Left Shift, Bitwise Right Shift |
+| `&`                              | Left to Right | Medium-low  | Bitwise AND                             |
+| `^`                              | Left to Right | Medium-low  | Bitwise XOR                             |
+| `\|`                             | Left to Right | Medium-low  | Bitwise OR                              |
+| `==`, `!=`, `<`, `>`, `<=`, `>=` | Left to Right | Low         | Comparison Operators                    |
+| `is`, `is not`, `in`, `not in`   | Left to Right | Low         | Identity and Membership Operators       |
+| `not`                            | Right to Left | Low         | Logical NOT                             |
+| `and`                            | Left to Right | Low         | Logical AND                             |
+| `or`                             | Left to Right | Lowest      | Logical OR                              |
+
+
+```python
+x=10
+print(x)
+y=20
+print(y)
+z=30
+print(z)
+p=x+y*z # 10 + (20 * 30)
+print(p)
+q=x-y+z # 10 - 20 + 30
+print(q)
+r=x*y+z # (10 * 20) + 30
+print(r)
+s=x+y*x/y+z # 10 + (20 * 10 / 20) + 30
+print(s)
+```
+
+Output:
+```
+10
+20
+30
+610
+20
+230
+50.0
 ```

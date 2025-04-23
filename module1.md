@@ -993,9 +993,9 @@ a>b # Condition, will return False
 
 ### `if` Statements
 ```mermaid
-graph LR
-    A[Condition Evaluates to True] --> B[Execute Block]
-    A[Condition Evaluates to False] --> C[Skip Block]
+graph TD
+    A{Given Condition} --Condition Evaluates to True--> B[Execute Block]
+    A{Given Condition} --Condition Evaluates to False--> C[Skip Block]
 ```
 
 Syntax:
@@ -1028,9 +1028,9 @@ end
 > `else` should always have a preceeding `if`, `elif`, `while` or `for` block. `else` doesn't have a condition, it works based on its preceeding block.
 Whenever `else` block's preceeding block evaluates to `False`, then the `else` block is executed.
 ```mermaid
-graph LR
-    A[Condition Evaluates to True] --> B[Execute if Block]
-    A[Condition Evaluates to False] --> C[Execute else Block]
+graph TD
+    A{Given Condition} --Condition Evaluates to True--> B[Execute if Block]
+    A{Given Condition} --Condition Evaluates to False--> C[Execute else Block]
 ```
 
 Syntax:
@@ -1071,52 +1071,66 @@ end
 ```
 
 ### `elif` Statements
+> [!TIP]
+> `elif` should always have a preceeding `if`, or another `elif` block.
+Whenever `elif` block's preceeding block evaluates to `False`, then the `elif` block is executed.
+- After Control reaches `elif` block,
+  - if condition evaluates to true, then execute `elif` block
+  - if condition evaluates to false, then execute `else` block
+
 ```mermaid
-graph LR
-    A[Condition Evaluates to True] --> B[Execute Block]
-    A1[Condition Evaluates to False] --> C[Next Condition]
-    C[Condition Evaluates to True] --> D[Execute Block]
-    C1[Condition Evaluates to False] --> E[Execute Block]
+graph TD
+    A{Given Condition in if} --Condition Evaluates to True--> B[Execute if Block]
+    A{Given Condition in if} --Condition Evaluates to False--> C[Execute elif Block below] --> C1
+    C1{Another Condition in elif} --Condition Evaluates to True --> B1[Execute elif Block]
+    C1 --Condition Evaluates to False--> C2[Execute else Block]
 ```
 
 Syntax:
 ```
 if condition:
-    statement_1
-    statement_2
-    ...
-    statement_n
-elif condition:
-    statement_1
-    statement_2
-    ...
-    statement_n
+  statement_1
+  ...
+  statement_n
+elif condition2:
+  statement_1
+  ...
+  statement_n
 else:
-    statement_1
-    statement_2
-    ...
-    statement_n
+  statement_1
+  ...
+  statement_n
 ```
-Example:
+
+<!--
 ```python
-print("begin")
-x = int(input("enter number:    "))
-if x % 2 == 0:
-    print("even")
-elif x % 3 == 0:
-    print("divisible by 3")
-else:
-    print("odd")
-print("end")
+
 ```
+-->
+### Example Programs
+1. Palindrome Checker
+```python
+x = input("enter String:    ")
+print("Entered number is:", x)
+rev_x = x[::-1] # Quickly reverse using slice operator, by providing step as -1
+if x == rev_x:
+    print(x,"is a Palindrome")
+else:
+    print(x, "is not a Palindrome")
+```
+
 Output:
 ```
-> python3 if-conditional.py
-begin
-enter number:    50
-even
-end
+> python3 palindrome.py
+enter String:    xyzzyx
+Entered number is: xyzzyx
+xyzzyx is a Palindrome
+> python3 palindrome.py
+enter String:    hello
+Entered number is: hello
+hello is not a Palindrome
 ```
+
 
 ## Looping Statements
 Are used to execute a block of code repeatedly until a certain condition is met

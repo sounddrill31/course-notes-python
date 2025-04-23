@@ -562,6 +562,9 @@ Immutable Objects are:
 <!-- Operators and magic methods -->
 <!-- TODO: Add contents upto Class 10-->
 ## Operators
+### Magic Methods
+TODO
+
 Python Operators are categorized into different categories:
 ### Arithmetic Operators
 - Used to perform mathematical arithmetic operations like Addition, Subtraction, Multiplication,Division, Modulus, Floor Division and Exponentiation Operations
@@ -923,3 +926,204 @@ Output:
 230
 50.0
 ```
+
+## Blocks
+A set of statements following the same indentation is known collectively as a block.
+- Block begins when Indentation increases
+- Block ends when Indentation decreases to the containing block's Indentation or no Indentation
+- Block should contain atleast one statement
+- A Block can contain another block
+- For Indentation, atleast one space is required but we generally use tab space or 4 spaces
+
+
+| Other Languages | Python |
+|-----------------|--------|
+| Other Languages use curly brackets to group statements together. | Python uses indentation to group statements together. |
+
+```
+{ stm_1
+...
+stm_n
+}
+```
+```
+stm1 # Block 0
+stm2 # Block 0
+  stm3 # Block 1
+  stm4 # Block 1
+    stm5 # Block 2
+    stm6 # Block 2
+  stm7 # Block 1
+  stm8 # Block 1
+stm9 # Block 0
+stm10 # Block 0
+```
+
+TODO: Fix
+
+## Flow Control Statements
+Control flow Statements or flow control statements are used to change the normal flow of execution of a program.
+Python supports two types of flow control statements:
+- Conditional Statements
+- Loop Statements
+
+### Normal Flow of Execution
+
+| Other Languages | Python |
+| --- | --- |
+| Execute main function first | Execute statements from top to bottom of the file |
+
+## Conditional Statements
+Conditional Statements are used to decide whether the block has to be executed or to skip execution of the block based on the given condition
+
+### Condition
+Any expression that evaluates to a Boolean value is known as a condition.
+- Every Condition is an expression but not all expressions are conditions
+
+```python
+a=10
+b=20
+a+b # Not a condtion
+a>b # Condition, will return False
+```
+
+1. if
+2. else
+3. elif
+
+### `if` Statements
+```mermaid
+graph LR
+    A[Condition Evaluates to True] --> B[Execute Block]
+    A[Condition Evaluates to False] --> C[Skip Block]
+```
+
+Syntax:
+```
+if condition:
+    statement_1
+    statement_2
+    ...
+    statement_n
+```
+Example:
+```python
+print("begin")
+x = int(input("enter number:    "))
+if x % 2 == 0:
+    print("even")
+print("end")
+```
+Output:
+```
+> python3 if-conditional.py
+begin
+enter number:    50
+even
+end
+```
+
+### `else` Statements
+> [!TIP]
+> `else` should always have a preceeding `if`, `elif`, `while` or `for` block. `else` doesn't have a condition, it works based on its preceeding block.
+Whenever `else` block's preceeding block evaluates to `False`, then the `else` block is executed.
+```mermaid
+graph LR
+    A[Condition Evaluates to True] --> B[Execute if Block]
+    A[Condition Evaluates to False] --> C[Execute else Block]
+```
+
+Syntax:
+```
+if condition:
+    statement_1
+    statement_2
+    ...
+    statement_n
+else:
+    statement_1
+    statement_2
+    ...
+    statement_n
+```
+Example:
+```python
+print("begin")
+x = int(input("enter number:    "))
+if x % 2 == 0:
+    print(x," is an even number")
+else:
+    print(x," is an odd number")
+print("end")
+```
+Output:
+```
+> python3 if-conditional.py
+begin
+enter number:    50
+50 is an even number
+end
+> python3 conditional.py
+begin
+enter number:    3
+3 is an odd number
+end
+```
+
+### `elif` Statements
+```mermaid
+graph LR
+    A[Condition Evaluates to True] --> B[Execute Block]
+    A1[Condition Evaluates to False] --> C[Next Condition]
+    C[Condition Evaluates to True] --> D[Execute Block]
+    C1[Condition Evaluates to False] --> E[Execute Block]
+```
+
+Syntax:
+```
+if condition:
+    statement_1
+    statement_2
+    ...
+    statement_n
+elif condition:
+    statement_1
+    statement_2
+    ...
+    statement_n
+else:
+    statement_1
+    statement_2
+    ...
+    statement_n
+```
+Example:
+```python
+print("begin")
+x = int(input("enter number:    "))
+if x % 2 == 0:
+    print("even")
+elif x % 3 == 0:
+    print("divisible by 3")
+else:
+    print("odd")
+print("end")
+```
+Output:
+```
+> python3 if-conditional.py
+begin
+enter number:    50
+even
+end
+```
+
+## Looping Statements
+Are used to execute a block of code repeatedly until a certain condition is met
+
+<!--
+### for
+#### for else
+### while
+#### while else
+-->

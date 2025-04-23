@@ -407,7 +407,7 @@ print(sys.getsizeof(x))
 The object size here might be smaller than the previous output thanks to Pyodide optimizations
 :::
 
-## Data Types
+## Categories Data Types
 Python Datatypes are categorized into different categories.
 ### 1. Numerical Types
   - Used to represent the non-decimal point numerical values, decimal point numerical values and complex values
@@ -503,17 +503,17 @@ Python Datatypes are categorized into different categories.
     The object size here might be smaller than the previous output thanks to Pyodide optimizations
     :::
 ### 3. NoneType
-<!-- TODO: Add Class 8 contents
+<!-- TODO: Add Class 8 contents -->
 `NoneType` is used to represent a `None` value
 - Python supports only one `NoneType` datatype, `NoneType` (class)
 
 ```mermaid
 graph LR
     A[C Language] --> B1[x declared] --No Value Given--> C1[Garbage Value stored]
-    A[Java Language(s)] --> B2[x declared] --No Value Given--> C2[Value stored but we can predict it]
-    A[Dotnet Languages] --> B3[x declared] --No Value Given--> C3[Value stored but we can predict it]
-    A[Python Language] --> B4[x declared] --No Value Given--> C4[Throws Error `NameError`]
-    ```
+    A2[Java Language] --> B2[x declared] --No Value Given--> C2[Value stored but we can predict it]
+    A3[Dotnet Languages] --> B3[x declared] --No Value Given--> C3[Value stored but we can predict it]
+    A4[Python Language] --> B4[x declared] --No Value Given--> C4[Throws Error `NameError`]
+```
 
 
 Here, we want to use `x` but we don't need it yet/don't have clarity on what to do with it

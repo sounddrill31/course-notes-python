@@ -90,6 +90,7 @@ pylint main.py
 ```
 
 Output:
+
 ```
 ************* Module main
 main.py:1:0: C0114: Missing module docstring (missing-module-docstring)
@@ -101,6 +102,7 @@ Your code has been rated at 6.25/10 (previous run: 8.18/10, -1.93)
 ```
 
 Fixed Code:
+
 ```python
 """Simple Program to demonstrate Arithmetic Operations""" # [!code ++]
 
@@ -133,10 +135,12 @@ Your code has been rated at 10.00/10 (previous run: 6.25/10, +3.75)
 ## Data Representation
 
 Any Business Organization usecase or scenario contains 2 parts:
+
 - Data
 - Operations
 
 Eg. Bank
+
 - CUST
   - data
     - cname, cadd, cacno, cbal, etc
@@ -149,6 +153,7 @@ Eg. Bank
     - da(), hra(), pf(), tsal(), etc
 
 We represent:
+
 - data with:
   - data types
   - data structures
@@ -156,15 +161,20 @@ We represent:
   - methods
   - functions
   - (or both)
+
 ## Data Types
 
 ### Introduction
+
 Datatypes are some keywords of programming languages that are used to specify how much memory will be allocated to the variables during execution
+
 - Also decides the type of data to be stored in the memory location of the variables
 - Without defining datatypes to variables, either explicitly or internally, memory will not be allocated to the variables
 
 ### Static vs Dynamic Languages
+
 Types of Languages using Datatypes:
+
 - Static Typed Programming Languages
   - Datatypes of variables are fixed
   - Programmer should declare the datatypes to the variables explicitly at the time of writing the program
@@ -213,7 +223,9 @@ Python internally uses the following Standard Datatypes
 - memoryview
 
 ### Types Demo
+
 In python, datatypes of variables are declared internally at the time of execution of the program based on data assigned to variables
+
 - Example:
   ```python
   i = 1000
@@ -242,6 +254,7 @@ In python, datatypes of variables are declared internally at the time of executi
   ```
 
 ::: details Try it out
+
 ```python:line-numbers
 i = 1000
 print(i)
@@ -256,11 +269,14 @@ p="souhrud"
 print(p)
 print(type(p))
 ```
+
 <Editor id="type-example2-moretypes" />
 :::
 
 ### Types of Datatypes
+
 Programming languages support 2 types of datatypes:
+
 1. Primitive types
 2. Reference types
 
@@ -268,11 +284,14 @@ Programming languages support 2 types of datatypes:
   - contains fixed size
   - Languages that support these are not regarded as complete object-oriented-programming languages, like Java and dotnet.
 - Reference Datatypes
+
   - doesn't contain fixed size
   - Python is a programming language that only supports reference type datatypes.
+
     - Every datatype is implemented through `class` syntax in Python
     - `class` syntax follows dynamic memory allocation so that there is no fixed size for datatypes in Python
     - Memory space allocated for `class` syntax is technically known as an object
+
       - Memory allocation for class is called object creation.
       - Memory deallocation is called object deletion.
       - Any number of objects can be created for a class
@@ -286,14 +305,19 @@ graph LR
 ```
 
 ### Boxing and Unboxing
+
 Java and dotnet allows you to convert every Primitive to Reference Datatypes(called boxing, using wrapper classes). The process of converting Reference Datatypes to Primitive type is called unboxing.
 
   <!--id  function to know address and getsizeof thru sys -->
+
 We use the `id()` function to know the address of an object and `getsizeof()`(from the `sys` module) to know the size of an object.
+
 - Because we're using `sys` module,we have to import it before we use it. Syntax: `import sys`
 
 <!-- Builtin functions: Link official docs-->
+
 ### Example
+
 ```python
 import sys
 x=1000
@@ -307,8 +331,8 @@ print(id(y))
 print(sys.getsizeof(y))
 ```
 
-
 Output:
+
 ```
 1000
 <class 'int'>
@@ -318,7 +342,9 @@ Output:
 140442143993136
 36
 ```
+
 ::: details Try it out
+
 ```python:line-numbers
 import sys
 x=1000
@@ -331,17 +357,20 @@ print(type(y))
 print(id(y))
 print(sys.getsizeof(y))
 ```
+
 <Editor id="example-id-typeof-eg3" />
 
 The object size here might be smaller than the previous output thanks to Pyodide optimizations
 :::
 
->[!TIP]
->The IDs change every time you run it since they are the memory addresses holding the value of x and y
+> [!TIP]
+> The IDs change every time you run it since they are the memory addresses holding the value of x and y
 
 Overwriting a variable automatically dereferences old objects, and the garbage collector drops it when reference count becomes 0
+
 <!-- x=1000 # now unused, will be dereferenced and dropped by garbage collector when  Reference count becomes 0
 x=2000-->
+
 ```mermaid
 graph LR
   A[class int: x] --Old Value, Discarded Object--> B[x=1000]
@@ -349,7 +378,9 @@ graph LR
   B[x=1000] --> 1000
   C[x=2000] --> 2000
 ```
+
 example:
+
 ```python
 import sys
 x=1000
@@ -368,7 +399,9 @@ print(type(x))
 print(id(x))
 print(sys.getsizeof(x))
 ```
+
 Output:
+
 ```
 1000
 <class 'int'>
@@ -385,6 +418,7 @@ Output:
 ```
 
 ::: details Try it out
+
 ```python:line-numbers
 import sys
 x=1000
@@ -403,118 +437,141 @@ print(type(x))
 print(id(x))
 print(sys.getsizeof(x))
 ```
+
 <Editor id="examle-prg4-getsizeof" />
 The object size here might be smaller than the previous output thanks to Pyodide optimizations
 :::
 
+<<<<<<< HEAD
 ## Categories Data Types
+=======
+## Data Types
+
+>>>>>>> 0b9b4ac (upload unpushed content)
 Python Datatypes are categorized into different categories.
+
 ### 1. Numerical Types
-  - Used to represent the non-decimal point numerical values, decimal point numerical values and complex values
-  - Python supports 3 Numerical Types:
-    1. `int`
-    2. `float`
-    3. `complex`
-  - Example:
-    ```python
-    import sys
-    x=1000
-    print(x)
-    print(type(x))
-    print(id(x))
-    print(sys.getsizeof(x))
-    y=123.456
-    print(y)
-    print(type(y))
-    print(id(y))
-    print(sys.getsizeof(y))
-    z=3+4j
-    print(z)
-    print(type(z))
-    print(id(z))
-    print(sys.getsizeof(z))
-    ```
-  - Output:
-    ```
-    1000
-    <class 'int'>
-    140442144832816
-    28
-    123.456
-    <class 'float'>
-    140442201642096
-    24
-    (3+4j)
-    <class 'complex'>
-    140442144832752
-    32
-    ```
-    ::: details Try it out
-    ```python:line-numbers
-    import sys
-    x=1000
-    print(x)
-    print(type(x))
-    print(id(x))
-    print(sys.getsizeof(x))
-    y=123.456
-    print(y)
-    print(type(y))
-    print(id(y))
-    print(sys.getsizeof(y))
-    z=3+4j
-    print(z)
-    print(type(z))
-    print(id(z))
-    print(sys.getsizeof(z))
-    ```
-    <Editor id="example-prg5-numeric-demos" />
-    The object size here might be smaller than the previous output thanks to Pyodide optimizations
-    :::
+
+- Used to represent the non-decimal point numerical values, decimal point numerical values and complex values
+- Python supports 3 Numerical Types:
+  1. `int`
+  2. `float`
+  3. `complex`
+- Example:
+  ```python
+  import sys
+  x=1000
+  print(x)
+  print(type(x))
+  print(id(x))
+  print(sys.getsizeof(x))
+  y=123.456
+  print(y)
+  print(type(y))
+  print(id(y))
+  print(sys.getsizeof(y))
+  z=3+4j
+  print(z)
+  print(type(z))
+  print(id(z))
+  print(sys.getsizeof(z))
+  ```
+- Output:
+  ```
+  1000
+  <class 'int'>
+  140442144832816
+  28
+  123.456
+  <class 'float'>
+  140442201642096
+  24
+  (3+4j)
+  <class 'complex'>
+  140442144832752
+  32
+  ```
+  ::: details Try it out
+  ```python:line-numbers
+  import sys
+  x=1000
+  print(x)
+  print(type(x))
+  print(id(x))
+  print(sys.getsizeof(x))
+  y=123.456
+  print(y)
+  print(type(y))
+  print(id(y))
+  print(sys.getsizeof(y))
+  z=3+4j
+  print(z)
+  print(type(z))
+  print(id(z))
+  print(sys.getsizeof(z))
+  ```
+  <Editor id="example-prg5-numeric-demos" />
+  The object size here might be smaller than the previous output thanks to Pyodide optimizations
+  :::
+
 ### 2. Boolean types
-  - Boolean category Datatypes represent a Boolean value, `True` or `False`
-  - Python supports only one Boolean category datatype, `bool`
-  - Example:
-    ```python
-    import sys
-    x=True
-    print(x)
-    print(type(x))
-    print(id(x))
-    print(sys.getsizeof(x))
-    ```
-  - Output
-    ```
-    True
-    <class 'bool'>
-    140442258316512
-    28
-    ```
-    ::: details Try it out
-    ```python:line-numbers
-    import sys
-    x=True
-    print(x)
-    print(type(x))
-    print(id(x))
-    print(sys.getsizeof(x))
-    ```
-    <Editor id="example-prg6-booleandemos" />
-    The object size here might be smaller than the previous output thanks to Pyodide optimizations
-    :::
+
+- Boolean category Datatypes represent a Boolean value, `True` or `False`
+- Python supports only one Boolean category datatype, `bool`
+- Example:
+  ```python
+  import sys
+  x=True
+  print(x)
+  print(type(x))
+  print(id(x))
+  print(sys.getsizeof(x))
+  ```
+- Output
+  ```
+  True
+  <class 'bool'>
+  140442258316512
+  28
+  ```
+  ::: details Try it out
+  ```python:line-numbers
+  import sys
+  x=True
+  print(x)
+  print(type(x))
+  print(id(x))
+  print(sys.getsizeof(x))
+  ```
+  <Editor id="example-prg6-booleandemos" />
+  The object size here might be smaller than the previous output thanks to Pyodide optimizations
+  :::
+
 ### 3. NoneType
+<<<<<<< HEAD
 <!-- TODO: Add Class 8 contents -->
+=======
+
+<!-- TODO: Add Class 8 contents
+>>>>>>> 0b9b4ac (upload unpushed content)
 `NoneType` is used to represent a `None` value
 - Python supports only one `NoneType` datatype, `NoneType` (class)
 
 ```mermaid
 graph LR
     A[C Language] --> B1[x declared] --No Value Given--> C1[Garbage Value stored]
+<<<<<<< HEAD
     A2[Java Language] --> B2[x declared] --No Value Given--> C2[Value stored but we can predict it]
     A3[Dotnet Languages] --> B3[x declared] --No Value Given--> C3[Value stored but we can predict it]
     A4[Python Language] --> B4[x declared] --No Value Given--> C4[Throws Error `NameError`]
 ```
+=======
 
+    A[Java Language(s)] --> B2[x declared] --No Value Given--> C2[Value stored but we can predict it]
+    A[Dotnet Languages] --> B3[x declared] --No Value Given--> C3[Value stored but we can predict it]
+    A[Python Language] --> B4[x declared] --No Value Given--> C4[Throws Error `NameError`]
+    ```
+>>>>>>> 0b9b4ac (upload unpushed content)
 
 Here, we want to use `x` but we don't need it yet/don't have clarity on what to do with it
 
@@ -527,23 +584,27 @@ print(x)
 > NameError: name 'x' is not defined
 
 So we assign a `NoneType` class value `None` to object `x`
+
 ```python
 x=None
 print(x)
 print(type(x))
 ```
+
 Output:
+
 ```
 None
 <class 'NoneType'>
 ```
+
 ### 4. str
 
-
-
 ### Mutable Objects vs Immutable Objects
+
 Mutable Objects are those objects whose value can be changed after creation.
 Mutable Objects are:
+
 - `List`
 - `Dictionary`
 - `Set`
@@ -551,6 +612,7 @@ Mutable Objects are:
 
 Immutable Objects are those objects whose value cannot be changed after creation. If they are changed, they are redeclared and recreated.
 Immutable Objects are:
+
 - `int`
 - `float`
 - `bool`
@@ -561,13 +623,19 @@ Immutable Objects are:
 <!-- Mutable Vs Immutable Objects -->
 <!-- Operators and magic methods -->
 <!-- TODO: Add contents upto Class 10-->
+
 ## Operators
+
 ### Magic Methods
+
 TODO
 
 Python Operators are categorized into different categories:
+
 ### Arithmetic Operators
+
 - Used to perform mathematical arithmetic operations like Addition, Subtraction, Multiplication,Division, Modulus, Floor Division and Exponentiation Operations
+
 ```python
   x=14
   y=3
@@ -578,19 +646,22 @@ Python Operators are categorized into different categories:
   print(x%y) # Modulus
   print(x//y) # Floor Division
   print(x**y) # Exponent/Power (x^y)
-  ```
-  - Output:
-  ```
-  17
-  11
-  42
-  4.666666666666667
-  2
-  4
-  2744
-  ```
+```
+
+- Output:
+
+```
+17
+11
+42
+4.666666666666667
+2
+4
+2744
+```
 
 ::: details String Multiplication
+
 ```python
 x="souhrud"
 y=3
@@ -598,11 +669,15 @@ print(x*y) # int * string is supported
 ```
 
 Output:
+
 ```
 souhrudsouhrudsouhrud
 ```
+
 :::
+
 ### Comparison Operators
+
 - Data Comparison
   - Comparison Operators are used to compare the data of the objects, pointed by the operands
   ```python
@@ -624,9 +699,10 @@ souhrudsouhrudsouhrud
   False
   True
   ```
-<!-- mermaid diagram april 21 8:05, a=1000 object, b=2000  -->
+  <!-- mermaid diagram april 21 8:05, a=1000 object, b=2000  -->
 
 ### Identity Operators
+
 - Address Comparison
   - Identity Operators are used to compare the id of the objects, pointed by the operands
   - We cannot rely on it to behave like Comparison Operators
@@ -635,6 +711,7 @@ souhrudsouhrudsouhrud
     - `is not`
 
 #### Eg 1: In this context, it behaves the same as comparison operations
+
 ```python
 x=1000
 print(x)
@@ -647,6 +724,7 @@ print(x is not y)
 ```
 
 Output:
+
 ```
 1000
 140611664345872
@@ -657,6 +735,7 @@ True
 ```
 
 #### Eg 2: When values are the same and the id is the same, it is `True`
+
 ```python
 x=2000
 print(x)
@@ -667,7 +746,9 @@ print(id(y))
 print(x is y)
 print(x is not y)
 ```
+
 Output:
+
 ```
 3000
 140611664346800
@@ -678,6 +759,7 @@ False
 ```
 
 #### Eg 3. With lists
+
 ```python
 x=[10,20,30]
 print(x)
@@ -690,7 +772,9 @@ print(x!=y)
 print(x is y)
 print(x is not y)
 ```
+
 Output:
+
 ```
 [10, 20, 30]
 140611663549632
@@ -703,6 +787,7 @@ True
 ```
 
 #### Eg4. List with same values
+
 ```python
 x=[70,80,90]
 print(x)
@@ -717,6 +802,7 @@ print(x is not y)
 ```
 
 Output:
+
 ```
 [70, 80, 90]
 140611663527104
@@ -731,8 +817,8 @@ True
 List is immutable, duplicate objects are created
 
 ### Membership Operators
-Membership Operators are used to search whether a particular element is available or not in a given Iterable type Objects
 
+Membership Operators are used to search whether a particular element is available or not in a given Iterable type Objects
 
 - Non-Iterable Objects
   - Any object that can only store one value is called a Non-Iterable Object
@@ -745,10 +831,12 @@ Membership Operators are used to search whether a particular element is availabl
 > Membership operators only work on Iterable Objects
 
 Python supports 2 Membership Operators:
+
 - `in`
 - `not in`
 
 Eg.
+
 ```python
 x = [70, 80, 90]
 print(60 in x)
@@ -758,6 +846,7 @@ print(80 not in x)
 ```
 
 Output:
+
 ```
 False
 True
@@ -766,6 +855,7 @@ False
 ```
 
 Eg2.
+
 ```python
 x=789
 print(x)
@@ -779,6 +869,7 @@ print(6 not in x)
 > TypeError: argument of type 'int' is not iterable
 
 Eg3.
+
 ```python
 x="789"
 print(x)
@@ -787,7 +878,9 @@ print('8' not in x)
 print('6' in x)
 print('6' not in x)
 ```
+
 Output:
+
 ```
 789
 True
@@ -797,9 +890,11 @@ True
 ```
 
 ### Bitwise Operators
+
 Bitwise Operators are used to perform bitwise operations on integers.
 
 Python supports 6 Bitwise Operators:
+
 - `&` (Bitwise AND)
 - `|` (Bitwise OR)
 - `^` (Bitwise XOR)
@@ -808,6 +903,7 @@ Python supports 6 Bitwise Operators:
 - `>>` (Bitwise Right Shift)
 
 Eg. <!-- 128 64 32 16 8 4 2 1 -->
+
 ```python
 x = 10 # 0 0 0 0 1 0 1 0
 y = 6  # 0 0 0 0 0 1 1 0
@@ -820,6 +916,7 @@ print(x >> 2) # Boolean Right Shift by 2 Positions,0 0 0 0 0 0 1 0 = 2
 ```
 
 Output:
+
 ```
 2
 14
@@ -830,6 +927,7 @@ Output:
 ```
 
 ### Unary Operators
+
 The Operators which we can apply on only one operand are called Unary Operators
 
 - `+` (Unary Plus)
@@ -845,15 +943,18 @@ print(-x)
 ```
 
 Output:
+
 ```
 10
 -10
 ```
 
 ### Logical Operators
+
 Logical Operators are used to perform mathematical logical operations on Boolean values.
 
 Python supports 3 Logical Operators:
+
 - `and` (Logical AND)
 - `or` (Logical OR)
 - `not` (Logical NOT)
@@ -871,6 +972,7 @@ print(not x) # Logical NOT
 ```
 
 Output:
+
 ```
 True
 False
@@ -880,24 +982,24 @@ False
 ```
 
 ## Operator Precedence
-Expressions are evaluated from Highest to Lowest Precedence, and in the given directionif they have the same Precedence.
-| Operator                         | Direction     | Precedence  | Meaning                                 |
-|----------------------------------|---------------|-------------|-----------------------------------------|
-| `(`, `)`                         | Left to Right | Highest     | Brackets                                |
-| `**`                             | Right to Left | High        | Exponent                                |
-| `+x`, `-x`, `~`                  | Right to Left | High        | Unary Plus, Minus, Bitwise NOT          |
-| `*`,`/`,`//`,`%`                 | Left to Right | Medium-high | Multiplication, Division, Floor Division, Modulus |
-| `+`, `-`                         | Left to Right | Medium      | Addition, Subtraction                   |
-| `<<`, `>>`                       | Left to Right | Medium      | Bitwise Left Shift, Bitwise Right Shift |
-| `&`                              | Left to Right | Medium-low  | Bitwise AND                             |
-| `^`                              | Left to Right | Medium-low  | Bitwise XOR                             |
-| `\|`                             | Left to Right | Medium-low  | Bitwise OR                              |
-| `==`, `!=`, `<`, `>`, `<=`, `>=` | Left to Right | Low         | Comparison Operators                    |
-| `is`, `is not`, `in`, `not in`   | Left to Right | Low         | Identity and Membership Operators       |
-| `not`                            | Right to Left | Low         | Logical NOT                             |
-| `and`                            | Left to Right | Low         | Logical AND                             |
-| `or`                             | Left to Right | Lowest      | Logical OR                              |
 
+Expressions are evaluated from Highest to Lowest Precedence, and in the given directionif they have the same Precedence.
+| Operator | Direction | Precedence | Meaning |
+|----------------------------------|---------------|-------------|-----------------------------------------|
+| `(`, `)` | Left to Right | Highest | Brackets |
+| `**` | Right to Left | High | Exponent |
+| `+x`, `-x`, `~` | Right to Left | High | Unary Plus, Minus, Bitwise NOT |
+| `*`,`/`,`//`,`%` | Left to Right | Medium-high | Multiplication, Division, Floor Division, Modulus |
+| `+`, `-` | Left to Right | Medium | Addition, Subtraction |
+| `<<`, `>>` | Left to Right | Medium | Bitwise Left Shift, Bitwise Right Shift |
+| `&` | Left to Right | Medium-low | Bitwise AND |
+| `^` | Left to Right | Medium-low | Bitwise XOR |
+| `\|` | Left to Right | Medium-low | Bitwise OR |
+| `==`, `!=`, `<`, `>`, `<=`, `>=` | Left to Right | Low | Comparison Operators |
+| `is`, `is not`, `in`, `not in` | Left to Right | Low | Identity and Membership Operators |
+| `not` | Right to Left | Low | Logical NOT |
+| `and` | Left to Right | Low | Logical AND |
+| `or` | Left to Right | Lowest | Logical OR |
 
 ```python
 x=10
@@ -917,6 +1019,7 @@ print(s)
 ```
 
 Output:
+
 ```
 10
 20
@@ -928,16 +1031,17 @@ Output:
 ```
 
 ## Blocks
+
 A set of statements following the same indentation is known collectively as a block.
+
 - Block begins when Indentation increases
 - Block ends when Indentation decreases to the containing block's Indentation or no Indentation
 - Block should contain atleast one statement
 - A Block can contain another block
 - For Indentation, atleast one space is required but we generally use tab space or 4 spaces
 
-
-| Other Languages | Python |
-|-----------------|--------|
+| Other Languages                                                  | Python                                                |
+| ---------------------------------------------------------------- | ----------------------------------------------------- |
 | Other Languages use curly brackets to group statements together. | Python uses indentation to group statements together. |
 
 ```
@@ -946,6 +1050,7 @@ A set of statements following the same indentation is known collectively as a bl
 stm_n
 }
 ```
+
 ```
 stm1 # Block 0
 stm2 # Block 0
@@ -962,22 +1067,27 @@ stm10 # Block 0
 TODO: Fix
 
 ## Flow Control Statements
+
 Control flow Statements or flow control statements are used to change the normal flow of execution of a program.
 Python supports two types of flow control statements:
+
 - Conditional Statements
 - Loop Statements
 
 ### Normal Flow of Execution
 
-| Other Languages | Python |
-| --- | --- |
+| Other Languages             | Python                                            |
+| --------------------------- | ------------------------------------------------- |
 | Execute main function first | Execute statements from top to bottom of the file |
 
 ## Conditional Statements
+
 Conditional Statements are used to decide whether the block has to be executed or to skip execution of the block based on the given condition
 
 ### Condition
+
 Any expression that evaluates to a Boolean value is known as a condition.
+
 - Every Condition is an expression but not all expressions are conditions
 
 ```python
@@ -992,6 +1102,7 @@ a>b # Condition, will return False
 3. elif
 
 ### `if` Statements
+
 ```mermaid
 graph TD
     A{Given Condition} --Condition Evaluates to True--> B[Execute Block]
@@ -999,6 +1110,7 @@ graph TD
 ```
 
 Syntax:
+
 ```
 if condition:
     statement_1
@@ -1006,7 +1118,9 @@ if condition:
     ...
     statement_n
 ```
+
 Example:
+
 ```python
 print("begin")
 x = int(input("enter number:    "))
@@ -1014,7 +1128,9 @@ if x % 2 == 0:
     print("even")
 print("end")
 ```
+
 Output:
+
 ```
 > python3 if-conditional.py
 begin
@@ -1034,6 +1150,7 @@ graph TD
 ```
 
 Syntax:
+
 ```
 if condition:
     statement_1
@@ -1046,7 +1163,9 @@ else:
     ...
     statement_n
 ```
+
 Example:
+
 ```python
 print("begin")
 x = int(input("enter number:    "))
@@ -1056,7 +1175,9 @@ else:
     print(x," is an odd number")
 print("end")
 ```
+
 Output:
+
 ```
 > python3 if-conditional.py
 begin
@@ -1071,9 +1192,10 @@ end
 ```
 
 ### `elif` Statements
-> [!TIP]
-> `elif` should always have a preceeding `if`, or another `elif` block.
-Whenever `elif` block's preceeding block evaluates to `False`, then the `elif` block is executed.
+
+> [!TIP] > `elif` should always have a preceeding `if`, or another `elif` block.
+> Whenever `elif` block's preceeding block evaluates to `False`, then the `elif` block is executed.
+
 - After Control reaches `elif` block,
   - if condition evaluates to true, then execute `elif` block
   - if condition evaluates to false, then execute `else` block
@@ -1087,6 +1209,7 @@ graph TD
 ```
 
 Syntax:
+
 ```
 if condition:
   statement_1
@@ -1102,13 +1225,44 @@ else:
   statement_n
 ```
 
-<!--
+Example:
 ```python
+s1=float(input("Enter subject 1 marks: "))
+s2=float(input("Enter subject 2 marks: "))
+s3=float(input("Enter subject 3 marks: "))
+s4=float(input("Enter subject 4 marks: "))
 
+avg=(s1+s2+s3+s4)/4
+
+if avg>90:
+    print("Grade A")
+elif avg>70:
+    print("Grade B")
+elif avg>50:
+    print("Grade C")
+else:
+    print("Failed!")
 ```
--->
+Output:
+```
+> python3 elif-prg.py
+Enter subject 1 marks: 50
+Enter subject 2 marks: 90
+Enter subject 3 marks: 7
+Enter subject 4 marks: 86
+Grade C
+> python3 elif-prg.py
+Enter subject 1 marks: 100
+Enter subject 2 marks: 60
+Enter subject 3 marks: 40
+Enter subject 4 marks: 90
+Grade B
+```
+
 ### Example Programs
+
 1. Palindrome Checker
+
 ```python
 x = input("enter String:    ")
 print("Entered number is:", x)
@@ -1120,6 +1274,7 @@ else:
 ```
 
 Output:
+
 ```
 > python3 palindrome.py
 enter String:    xyzzyx
